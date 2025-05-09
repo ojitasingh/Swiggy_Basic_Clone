@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Swiggy Clone</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="swiggy logo.png" alt="Swiggy Logo" />
+                <h1>Swiggy Clone</h1>
+            </div>
+            <div class="search-bar">
+                <input type="search" id="searchInput" placeholder="Search for restaurants or dishes..." aria-label="Search" />
+                <button id="searchBtn" aria-label="Search Button">Search</button>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <section id="restaurants" class="restaurants-grid" aria-live="polite" aria-label="Restaurants list">
+            <!-- Restaurant cards will be rendered here -->
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>© 2024 Swiggy Clone. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

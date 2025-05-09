@@ -1,0 +1,233 @@
+/* General Reset and Box Sizing */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root font size for easy rem calculations */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Body and Container */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  background-color: #fc8019;
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgb(252 128 25 / 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  cursor: default;
+}
+.logo img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  flex: 1 1 300px;
+  max-width: 600px;
+  margin-left: 1rem;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgb(0 0 0 / 0.12);
+  background-color: white;
+}
+
+.search-bar input[type="search"] {
+  flex-grow: 1;
+  padding: 0.6rem 1rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.search-bar input[type="search"]::placeholder {
+  color: #999;
+}
+
+.search-bar button {
+  background-color: #fc8019;
+  border: none;
+  color: white;
+  padding: 0 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.search-bar button:hover,
+.search-bar button:focus {
+  background-color: #e67300;
+  outline: none;
+}
+
+/* Main Content - Restaurants Grid */
+.restaurants-grid {
+  margin: 2rem 0 4rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+}
+
+/* Restaurant Card */
+.restaurant-card {
+  background: #fff;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.restaurant-card:hover,
+.restaurant-card:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgb(0 0 0 / 0.15);
+  outline: none;
+}
+
+/* Restaurant Image */
+.restaurant-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 4px solid #fc8019;
+  transition: transform 0.3s ease;
+}
+
+.restaurant-card:hover .restaurant-img {
+  transform: scale(1.05);
+}
+
+/* Restaurant Info */
+.restaurant-info {
+  padding: 1rem 1.2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.restaurant-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #222;
+  margin-bottom: 0.3rem;
+  user-select: none;
+}
+
+.restaurant-cuisine {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.6rem;
+}
+
+.restaurant-rating {
+  background-color: #48c479; /* Green for good rating */
+  color: white;
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  width: fit-content;
+  user-select: none;
+}
+
+/* Footer */
+.footer {
+  background-color: #222;
+  color: #aaa;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+/* Responsive Typography */
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .search-bar {
+    margin-left: 0;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .restaurant-img {
+    height: 140px;
+  }
+}
+
+/* Mobile Small Devices */
+@media (max-width: 360px) {
+  .header-container {
+    padding: 0 0.5rem;
+  }
+  .restaurant-info {
+    padding: 0.8rem 1rem;
+  }
+  .restaurant-name {
+    font-size: 1.1rem;
+  }
+  .restaurant-cuisine {
+    font-size: 0.8rem;
+  }
+  .restaurant-rating {
+    font-size: 0.85rem;
+  }
+}
+
